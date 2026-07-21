@@ -1,0 +1,39 @@
+.task-list-container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.task-list-section {
+  border-top: 1px solid #e0e0e0;
+  padding-top: 30px;
+}
+
+.task-list-section:first-child {
+  border-top: none;
+  padding-top: 0;
+}
+
+.section-title {
+  font-size: 1.3rem;
+  color: #333;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.task-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.task-list.completed {
+  opacity: 0.8;
+}
+
+.empty-message {
+  color: #bbb;
+  text-align: center;
+  padding: 30px;
+  font-style: italic;
+}
