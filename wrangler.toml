@@ -1,0 +1,25 @@
+#:schema node_modules/wrangler/config-schema.json
+name = "task-tracker"
+type = "javascript"
+account_id = ""
+workers_dev = true
+main = "dist/index.js"
+compatibility_date = "2023-12-01"
+
+[build]
+command = "cd client && npm install && npm run build"
+cwd = "."
+watch_paths = ["client/src/**/*.jsx", "client/src/**/*.css"]
+
+[build.upload]
+format = "service-worker"
+
+[env.production]
+name = "task-tracker-prod"
+routes = [
+  { pattern = "task-tracker.pages.dev", zone_name = "pages.dev" }
+]
+
+[[r2_buckets]]
+binding = "BUCKET"
+bucket_name = "task-tracker"
