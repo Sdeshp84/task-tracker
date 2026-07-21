@@ -1,22 +1,19 @@
 {
   "name": "task-tracker",
   "version": "1.0.0",
-  "description": "A simple task tracker application",
-  "main": "server.js",
+  "description": "Full-stack task tracker with Cloudflare Workers + D1",
   "type": "module",
+  "main": "src/index.js",
   "scripts": {
-    "dev": "node server.js",
-    "build": "npm run build:client",
+    "dev": "wrangler dev",
+    "deploy:worker": "wrangler deploy",
     "build:client": "cd client && npm install && npm run build",
-    "start": "node server.js"
+    "deploy:all": "npm run build:client && wrangler deploy"
   },
-  "keywords": ["tasks", "tracker", "productivity"],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
-    "express": "^4.18.2",
-    "sqlite3": "^5.1.6",
-    "cors": "^2.8.5",
-    "dotenv": "^16.0.3"
+    "itty-router": "^4.0.20"
+  },
+  "devDependencies": {
+    "wrangler": "^3.26.0"
   }
 }
